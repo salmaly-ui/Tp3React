@@ -1,0 +1,123 @@
+/* --- Général --- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Titre principal --- */
+.titre {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 28px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 3px solid #3498db;
+}
+
+/* --- Barre de navigation --- */
+nav {
+  background-color: #3498db;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- Contenu des pages --- */
+.page {
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+}
+
+.page h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.page h3 {
+  color: #555555;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* --- Listes --- */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #eaf4fb;
+  border-left: 4px solid #3498db;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+/* --- Bouton --- */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #2176ae;
+}
+
+/* --- Barre connexion --- */
+.connexion-bar {
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #dddddd;
+  font-size: 15px;
+}
+
+/* --- Notification --- */
+.notif {
+  background-color: #fff8e1;
+  border-left: 4px solid #f39c12;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  color: #7d5a00;
+}
+
+/* --- Galerie --- */
+.galerie {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.galerie img {
+  width: 160px;
+  border-radius: 6px;
+  border: 2px solid #3498db;
+}
