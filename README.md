@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# 🎬 CinéReact — TP React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projet pédagogique réalisé dans le cadre du cours React (3ème année, S6).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Description
 
-### `npm start`
+CinéReact est une application web créée avec **React**. Elle met en pratique :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- La navigation avec **React Router**
+- Le **rendu conditionnel** (opérateurs ternaires et logiques)
+- Les **listes dynamiques** avec `map()`
+- L'intégration d'**images**, de **médias** et de **styles CSS**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+##  Lancer le projet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prérequis
 
-### `npm run build`
+- [Node.js](https://nodejs.org) installé sur votre machine
+- Un terminal (PowerShell, bash, etc.)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Cloner ou ouvrir le dossier du projet
+cd tp-cinema
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Installer les dépendances
+npm install
 
-### `npm run eject`
+# Installer React Router
+npm install react-router-dom
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Lancer le serveur de développement
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+L'application s'ouvre automatiquement sur **http://localhost:3000**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##  Structure du projet
 
-## Learn More
+```
+tp-cinema/
+├── public/
+│   └── index.html
+└── src/
+    ├── index.js            → Point d'entrée, active BrowserRouter
+    ├── App.js              → Routeur principal + navigation
+    ├── App.css             → Styles globaux
+    │
+    ├── Accueil.js          → Page d'accueil (/)
+    ├── Apropos.js          → Page À propos (/apropos)
+    ├── Contact.js          → Page Contact (/contact)
+    │
+    ├── Connexion.js        → Composant bouton connecté/déconnecté
+    ├── ListeTaches.js      → Liste de films avec map()
+    ├── ListeCourses.js     → Liste dynamique via props
+    ├── Notif.js            → Rendu conditionnel notifications
+    ├── Logo.js             → Affichage d'une image importée
+    ├── LecteurAudio.js     → Lecteur audio natif
+    └── Galerie.js          → Galerie de 3 images
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  Pages et routes
 
-### Code Splitting
+| URL | Composant | Description |
+|-----|-----------|-------------|
+| `/` | `Accueil.js` | Liste de films, snacks, notifications |
+| `/apropos` | `Apropos.js` | Présentation du projet |
+| `/contact` | `Contact.js` | Informations de contact |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
+## Demonstaration 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+https://github.com/user-attachments/assets/5f8f13b6-3b24-4216-ba5c-880d67bd3765
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##  Fonctionnalités
 
-### Advanced Configuration
+### Navigation (React Router)
+Utilisation de `<Link>`, `<Routes>` et `<Route>` pour une navigation SPA sans rechargement de page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Rendu conditionnel
+```jsx
+{connecte ? <span> Connecté</span> : <span> Déconnecté</span>}
+```
 
-### Deployment
+### Liste dynamique avec map()
+```jsx
+{films.map((film) => (
+  <li key={film.id}>🎥 {film.titre}</li>
+))}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Props
+```jsx
+<ListeCourses articles={['Popcorn ', 'Cola ']} />
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##  Style CSS
+
+Le fichier `App.css` utilise un style simple et lisible :
+- Fond blanc, texte foncé
+- Navigation bleue (`#3498db`)
+- Listes avec bordure colorée à gauche
+- Mise en page centrée avec largeur maximale de 600px
+
+---
+
+## 📚 Concepts React utilisés
+
+| Concept | Fichier(s) |
+|---------|-----------|
+| `useState` | `Connexion.js` |
+| `map()` | `ListeTaches.js`, `ListeCourses.js`, `Galerie.js` |
+| `props` | `ListeCourses.js`, `Notif.js` |
+| `import` image/audio | `Logo.js`, `LecteurAudio.js` |
+| `<Link>` / `<Route>` | `App.js` |
+| `className` | Tous les composants |
+
+---
+
+## 👤 Auteur
+
+- **Étudiant :** SALMA LAOUY
+- **Filiere :** 3ème année CLE informatique ENS MARRAKECH 
+- **Date :** 2025/2026
+
+---
+
+## 📝 Notes
+
+- Les vulnerabilities affichées par `npm install` sont normales avec `create-react-app` et n'affectent pas le fonctionnement du projet.
+- Les fichiers `logo.png`, `audio.mp3` et `film1.jpg / film2.jpg / film3.jpg` doivent être placés manuellement dans le dossier `src/`.
